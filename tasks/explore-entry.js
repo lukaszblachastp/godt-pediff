@@ -4,8 +4,8 @@ module.exports = {
         package: 'explore-entry'
     },
     execute: function(pediff, config) {
-        this.waitUntilVisible('.explore-nav', function() {
+        this.then( function() {
             pediff.screenshot('#wrapper');
-        }, function(){}, 10000);
+        });
     }
 };
