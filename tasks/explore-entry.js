@@ -8,8 +8,10 @@ module.exports = {
     		return this.evaluate(function() {
     			return document.querySelectorAll('.loader').length < 1;
     		});
-    	}, function() {    		
-            pediff.screenshot('#wrapper');
+    	}, function() {
+            this.wait(500, function() {
+                pediff.screenshot('#wrapper');
+            }
     	}, function() {
     		this.echo('Loaders sill spinning, giving up', 'ERROR');
     	}, 10000);
