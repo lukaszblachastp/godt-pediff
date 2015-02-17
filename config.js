@@ -25,8 +25,8 @@ module.exports = {
     },
 
     pediff: {
-        defaultTimeout: 5000,
-        // verbose: true,
+        defaultTimeout: 15000,
+        verbose: true,
         screenshotRoot: './img/',
 
         // Resemble.js settings
