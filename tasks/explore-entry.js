@@ -4,8 +4,14 @@ module.exports = {
         package: 'explore-entry'
     },
     execute: function(pediff, config) {
-        this.then( function() {
+    	this.waitFor(function() {
+    		return this.evaluate(function() {
+    			return document.querySelectorAll('.loader').length < 1;
+    		});
+    	}, function() {    		
             pediff.screenshot('#wrapper');
-        });
+    	}, function() {
+    		this.echo('Loaders sill spinning, giving up', 'ERROR');
+    	}, 10000);
     }
 };
