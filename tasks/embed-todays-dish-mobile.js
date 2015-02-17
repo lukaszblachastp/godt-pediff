@@ -8,7 +8,7 @@ module.exports = {
     },
     execute: function(pediff, config) {
         this.then(function() {
-            pediff.screenshot('#wrapper');
+            pediff.screenshot('.todays-dish-wrapper');
         });
     }
 };
