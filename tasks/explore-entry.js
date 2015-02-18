@@ -4,16 +4,12 @@ module.exports = {
         package: 'explore-entry'
     },
     execute: function(pediff, config) {
-    	this.waitFor(function() {
-    		return this.evaluate(function() {
-    			return document.querySelectorAll('.loader').length < 1;
-    		});
-    	}, function() {
+        pediff.waitForLoadersToFinish();
+
+    	this.then(function() {
             this.wait(500, function() {
                 pediff.screenshot('#wrapper');
             });
-    	}, function() {
-    		this.echo('Loaders sill spinning, giving up', 'ERROR');
-    	}, 10000);
+    	});
     }
 };
