@@ -11,7 +11,7 @@ module.exports = {
     	}, function() {
             this.wait(500, function() {
                 pediff.screenshot('#wrapper');
-            }
+            });
     	}, function() {
     		this.echo('Loaders sill spinning, giving up', 'ERROR');
     	}, 10000);

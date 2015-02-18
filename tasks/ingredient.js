@@ -8,6 +8,6 @@ module.exports = {
             this.waitForSelector('.ingredient-data', function() {
                 pediff.screenshot('#wrapper');
             }, function() {}, 10000);
-        })
+        });
     }
 };
