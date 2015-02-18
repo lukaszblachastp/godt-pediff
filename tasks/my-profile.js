@@ -4,7 +4,7 @@ module.exports = {
         package: 'my-profile'
     },
     execute: function(pediff, config) {
-        this.wait(500);
+        pediff.waitForLoadersToFinish();
 
         this.thenEvaluate(function() {
             var auth = require('services/auth');
