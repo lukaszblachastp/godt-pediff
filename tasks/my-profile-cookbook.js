@@ -4,7 +4,7 @@ module.exports = {
         package: 'my-profile-cookbook'
     },
     execute: function(pediff, config) {
-        this.wait(500);
+        pediff.waitForLoadersToFinish();
 
         this.thenEvaluate(function() {
             require('services/auth').setUserLogged({
@@ -13,8 +13,9 @@ module.exports = {
             require('app').router.myProfileCookbook(6847);
         });
 
+        pediff.waitForLoadersToFinish();
+
         this.then(function() {
-            this.wait(500);
             this.waitUntilVisible('.cookbooks-list-element .element-image-container img',function() {
                 pediff.screenshot('#wrapper');
             },function() {},1000);

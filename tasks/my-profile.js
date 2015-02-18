@@ -16,11 +16,9 @@ module.exports = {
 
         this.then(function() {
             this.wait(500);
-            this.waitUntilVisible('.cookbooks-list-element .element-image-container img',function(){
+            this.waitUntilVisible('.cookbooks-list-element .element-image-container img', function(){
                 pediff.screenshot('#wrapper');
-            },function() {
-                pediff.screenshot('body', 'failed');
-            },1000);
+            },function() {}, 1000);
         });
 
 
