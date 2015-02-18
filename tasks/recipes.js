@@ -11,13 +11,13 @@ module.exports = {
         }, function() {}, 10000);
 
         // extended search
-        this.thenClick('.recipes-filters li:nth-child(3) a', function() {
+        this.thenClick('.recipes-filters li[data-name=lunsj] a', function() {
             this.wait(1000, function() {
                 pediff.screenshot('#wrapper', config.actions[0]);
             });
         });
 
-        this.thenClick('.recipes-filters li:nth-child(12) a', function() {
+        this.thenClick('.recipes-filters li[data-name=under-30-minutter] a', function() {
             this.wait(1000, function() {
                 pediff.screenshot('#wrapper', config.actions[1]);
             });
