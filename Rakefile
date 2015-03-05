@@ -10,7 +10,10 @@ task :default => [:build]
 desc "Download and unpack pediff"
 task :download do |task|
     puts task.comment
-    sh "./download-pediff.sh"
+    `git clone git.int.vgnett.no:/git/stp/pediff ./tmp`
+    `rm -rf ./tmp/.git`
+    `cp -r ./tmp/* .`
+    `rm -rf ./tmp`
 end
 
 desc "Install node dependencies"
@@ -19,7 +22,7 @@ task :npm do |task|
     sh "npm install"
 end
 
-desc "Run suiterunner.js"
+desc "Run tasks"
 task :run do |task|
     puts task.comment
     sh "./run-tasks.sh"
