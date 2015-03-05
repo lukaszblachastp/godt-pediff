@@ -1,0 +1,16 @@
+report
+readme_assets
+node_modules
+.idea
+
+tasks/.gitkeep
+report.sh
+report.json
+README.md
+suiterunner.js
+run-tasks.sh
+package.json
+pediff.js
+config.js.dist
+resemblejscontainer.html
+LICENSE
