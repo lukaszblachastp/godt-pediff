@@ -28,6 +28,7 @@ module.exports = {
         defaultTimeout: 15000,
         verbose: true,
         screenshotRoot: './img/',
+        mismatchTolerance: 0.01,
 
         // Resemble.js settings
         outputSettings: {
