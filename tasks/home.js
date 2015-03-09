@@ -1,3 +1,5 @@
+var godt = require('../helpers/godt.js');
+
 module.exports = {
     config: {
 //        path: 'PATH/TO/RESOURCE',
@@ -5,6 +7,8 @@ module.exports = {
         actions: ['search-autocomplete']
     },
     execute: function(pediff, config) {
+        godt.waitUntilRendered();
+
         pediff.waitForLoadersToFinish();
 
         // homepage
